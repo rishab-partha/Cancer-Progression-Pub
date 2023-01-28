@@ -1,5 +1,6 @@
-# Cancer-Progression-2021
- Code for my 2020-2021 Research Project Analyzing Cancer Progression
+# Details
+
+Public Repository for Manuscript "A Novel Recurrent Neural Network Framework for Prediction and Treatment of Oncogenic Mutation Progression", Parthasarathy, Bhowmik.
 
 
 # Licenses/Citations
