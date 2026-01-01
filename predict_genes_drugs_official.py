@@ -34,8 +34,9 @@ ignored_stages = {'BLCA': {1}, 'BRCA': {4}, 'COADREAD': {}, 'HNSC': {1}, 'KIRC':
 stage_lists = {'BRCA' : ['I', 'II', 'III'], 'COADREAD' : ['I', 'II', 'III', 'IV'], 'HNSC' : ['II', 'III', 'IV'], 'KIRC' : ['I', 'II', 'III', 'IV'], 'LIHC' : ['I', 'II', 'III'], 'LUAD' : ['I', 'II', 'III'],' LUSC' : ['I', 'II', 'III'],
                'SKCM' : ['I', 'II', 'III', 'IV'], 'STAD' : ['I', 'II', 'III', 'IV'], 'THCA' : ['I', 'II', 'III', 'IV']}
 
-def load_model(cancer_type):
-    model_id = cancer_type + "_stage_model_0.8_Top200Preprocessed_50Epochs"
+def load_model(cancer_type, model_id = None):
+    if model_id is None:
+        model_id = cancer_type + "_stage_model_0.8_Top200Preprocessed_200Epochs"
     model_path = models_path / cancer_type / model_id
     model = tf.keras.models.load_model(model_path)
     return model
