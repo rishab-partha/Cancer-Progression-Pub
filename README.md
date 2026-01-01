@@ -2,6 +2,13 @@
 
 Public Repository for Manuscript "A Novel Recurrent Neural Network Framework for Prediction and Treatment of Oncogenic Mutation Progression", Parthasarathy, Bhowmik.
 
+# Reproducibility Checklist
+
+To reproduce training results, download the desired TCGA Pan-Cancer Atlas data from cBioPortal. Then, import `networks.py` and run `run_model_stage_prediction` with the desired cancer class, number of epochs, omitted stages, and number of genes preprocessed (preprocessing is controlled by the `heatmap` flag).
+
+This will train the network and produce ROC curves. 
+
+To reproduce drug recommendation results, modify lines 44-46 of `predict_genes_drugs_official.py` to load in your model of choice, and then run `main.py`.
 
 # Licenses/Citations
 ## TCGA 
