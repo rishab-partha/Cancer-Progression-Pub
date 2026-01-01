@@ -10,6 +10,8 @@ This will train the network and produce ROC curves.
 
 To reproduce drug recommendation results, modify lines 44-46 of `predict_genes_drugs_official.py` to load in your model of choice, and then run `main.py`.
 
+Overall, the specific RNN machine learning configuration used in this project contained an Embedding of length 256 (i.e. transforming each mutation into a float matrix of length 256), a bidirectional LSTM layer of length 64, and two Dense layers, which were activated with the Rectified Linear Unit (ReLU) and SoftMax, respectively. Training was performed using the Adam optimizer with a learning rate of 1e-4 over 200 epochs and a batch size of 16. Sequences were postfix-padded to the maximum length in the dataset using empty strings. No early stopping strategies were used, and convergence was analyzed by continued decrease in validation loss. No random seeds were used. These parameters were generated using hyperparameter sweeps checking for the highest validation accuracy. 
+
 # Licenses/Citations
 ## TCGA 
 "The Cancer Genome Atlas Program." National Cancer Institute at the National Institutes of
